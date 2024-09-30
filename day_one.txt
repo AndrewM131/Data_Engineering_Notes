@@ -16,3 +16,20 @@ Weeks 6-7 Tradeoffs / parallelization
 Weeks 8-9 Security, privacy, embeddings
 
 
+HW0: setup git / public key authentification    Oct 4th
+HW1: setup git collaboration                    Oct 11th
+HW2: setup / install django / ORM               Oct 18th
+Exam 1: databases & ORM                         Oct 23rd
+HW3: define DDL                                 Oct 25th
+HW4: front end: login page                      Nov 1st
+HW5: implementing the API                       Nov 8th
+HW6: Testing the API, creating fixtures
+Exame 2: arhictecture, hashing
+HW7: Testing the app, writing tests
+Exame 3: pulling it all together
+
+Git bash commands
+ls
+cd
+rm
+mv
