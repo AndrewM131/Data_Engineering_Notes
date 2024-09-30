@@ -1,0 +1,18 @@
+9/30/2024
+
+What is Big Data?
+What is Data Engineering?
+
+HW0: Due Friday, Oct. 4th
+-Make copy of github repository, add a file, remove a file, check in your
+changes, push these changes to the cloud and share the branch in your repo w/
+gradescope
+
+Breakdown of Quarter:
+Weeks 1-2 Relational databases
+Week 3 architecture / data implementation
+Weeks 4-5 Indexing tricks
+Weeks 6-7 Tradeoffs / parallelization
+Weeks 8-9 Security, privacy, embeddings
+
+
