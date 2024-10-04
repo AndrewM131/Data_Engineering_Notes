@@ -1,0 +1,32 @@
+day 3, 10/4/24
+
+cat nobel-prize-laureates.csv | cut -d ";" -f 2, 3 | sort | uniq -c
+
+Outputs only line 2, 3, sorts it and takes the unique values as a histogram
+
+
+cat datafile | cut -d , -f #
+(the -d , is the delimiter)
+(the -f # specifies the column we want to use)
+or
+cat -f2 datafile
+
+for example:
+cat IntroductiontoDataEngineeri-1.csv | cut -d , -f 1-4, 6-11, 14-18
+
+example:
+cut -f 11 -d, roster-clean.csv | sort | uniq -c
+
+SQL has two essential parts
+
+DDL:
+CREATE
+ALTER
+DROP
+
+DML:
+SELECT
+INSERT
+UPDATE
+DELETE
+
