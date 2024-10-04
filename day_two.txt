@@ -1,0 +1,67 @@
+## What do databases do?
+CRUD:
+Create 
+Read 
+Update 
+Delete
+
+A very simple python database:
+
+```
+mydict = {}
+mydict["HOME"] = "/Users/giomhern"
+mydict["USER"] = "wltrimbl"
+mydict["apiKey"] = "732ascdhs94r203"
+
+del mydict["HOME"]
+```
+
+
+SQL has two essential parts:
+
+Data-definition language (DDL):
+
+Specifies how the data are arranged including the schema for each table, and relations
+
+
+Starting 1:05 PM
+
+SQL
+Queries
+
+DDL examples
+CREATE TABLE Customers ( CustomerID int,
+    LastName varchar(255)
+    FirstName varchar(255)
+    ...
+);
+
+Insert INTO Orders(italicized)
+VALUES (1, 4, 'Toaster', 'None', 1);
+
+DML examples
+
+Insert INTO Customers VALUES (1, 'John', 'Smith', '302 N Michigan', 'Chicago');
+Insert INTO Customers VALUES (2, 'Jenny', 'Qiang', '1802 S Prairie', 'Chicago');
+
+Insert INTO Orders VALUES (1, 2, 'Bug defector)
+
+
+Select *
+FROM Orders, Customers
+WHERE Orders.CustomerID = 5
+
+More shell...
+cat <filename>
+
+wc <filename>
+
+cut -f N[,N2]...
+
+Example:
+cut -f 6 -d , IntroductiontoDataEngineeri-1.csv | sort | uniq -c
+
+grep Economics IntroductiontoDataEngineeri-1.csv | wc
+    29  123 3447
+
+cut -f 6,7 -d , IntroductiontoDataEngineeri-1.csv | sort | uniq -
