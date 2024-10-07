@@ -1,0 +1,208 @@
+10/07/2024
+
+Data Model
+    defines how different pieces of
+digital data are organized, defines how they
+relate to one another, and how these
+representations correspond to the properties of
+real-world entities
+
+Data dictionary
+    essentially the same thing,
+but packaged as metadata.
+
+
+Open Systems Interconnection
+7 Layers of the OSI Model:
+Application
+    End User Layer
+    HTTP, HTP, IRC, SSH, DNS
+Presentation
+    Syntax Layer
+    SSL, SSH, IMAP, FTP, MPEG, JPEG
+Session
+    Synch & send to port
+    API's, Sockets, WinSock
+Transport
+    End-to-end connection
+    TCP, UDP
+Network
+    Packets
+    IP, ICMP, IPSec, IGMP
+Data Link
+    Frames
+    Ethernet, PPP, Switch, Bridge
+Physical
+    Physical structure
+    Coax, Fiber, Wireless, Hubs, Repeaters
+
+Communicate through APIs
+
+
+Data models:
+-Logical data model: A model that describes the
+semantics of the data, as represented by the particular
+data analysis technology
+
+-Physical data model : describes the physical means by
+which data are stored. This is concerned with
+partitions, CPUs, bits, data types, and so on
+
+-As history marches on, these drift apart from each
+other. We don't worry about physical representation
+(bolts and bytes) unless/until we encounter a relevant
+resource constraint
+
+
+Example: design a database to manage orders for a retailer
+-Imagine that you need to write programs to interact with the retailer; 
+you'll need to do stuff
+
+-What do you need to store? (Data about customers, data about products, data
+about orders...)
+
+-What functions do you want to specify? We can write down what the functions
+should do before we start hacking...
+
+
+Application Programming Interface
+-Code that does stuff
+-API codifies communication between the user or program using the API and the
+engine producing the API results
+-Documentation and examples show you what inputs are required, permitted, how
+can the behavior of the program be modified
+-We can talk about bash, pandas, pytorch, amazon S3, instagram, podcast
+publishers...
+-If you aren't running the server running the API, usually not
+free -> authentification
+
+
+Specifiying your own API
+What are "actions" that your application needs to implement?
+
+CreateUser(firstName, lastName, address) -> userid
+
+CreateOrder(userid, productid, qty) -> orderid
+
+CreateInvoice(orderid)
+
+...
+
+AddProduct(...)
+
+DeleteUser(...)
+
+DeleteOrder(...)
+
+CloseOrder(...)
+
+
+Entity-relation diagrams
+
+Customer
+-Customer_ID
+-lastName
+-Email
+-Address
+
+Order 
+-Order_ID
+-Order_date
+-Delivery_ID
+-Customer_ID
+
+Delivery 
+-Delivery_ID
+-Type 
+-Status
+
+Products 
+-Product_ID
+-Product_name
+-Category_ID
+
+Categories
+-Category_ID
+-Category_name
+-Category_type
+
+Relationships:
+- Customer (One) to Order (Many)
+- Order (Many) to Delivery (One)
+- Products (Many) to Categories (One)
+- Order (Many) to Products (Many)
+
+-Entities: entities represent real-world objects or concepts, such
+as customers, products, employees, interactions...
+-Attributes: (rows) properties of entities
+-Relationships: represent associations or connections between entities.
+Can be one-to-one, one-to-many, many-to-one, or many-to-many
+
+
+Many-to-many
+OrderID     Product             CustomerID      Qty
+----------------------------------------------------
+1           Insect repellent    1               1
+1           Bug deflector       1               1
+2           Diffraction grating 2               25
+3           Earbuds             1               6
+
+-Which fields can be determined from which other fields?
+-Where is the primary key?
+    -Tuple of the OrderID and Product since you can't have multiple products
+
+Suppose we have a new table:
+Product                 Category
+---------------------------------
+Bug Deflector           Cooking
+Insect Repellent        Cooking
+Earbuds                 Halloween Costumes
+Diffraction grating     Mental Health
+Shame hat               Books
+
+Why not keep category in the orders table?
+Receive all information at once
+
+Why not keep category in the orders table?
+Functionally determined:
+A determines B
+When B is distinct, A is always distinct
+Order Number functionally determines customer number:
+Different customers always have different order numbers
+
+-Why no one-to-one relationships in this diagram?
+    Not necessary
+-Presence of foreign key constraint does not tell you if relationship is 
+many-to-many, one-to-many, or one-to-one
+
+
+Ok, let's make a schema
+This schema is a means to an end, the schema defines the relational DB 
+relationships; the relational DB will store all teh data for our API
+
+CREATE TABLE Orders (
+    OrderID int,
+    CustomerID int FOREIGN KEY references Customers,
+    Product varchar(255) FOREIGN KEY references Product,
+    ShippingInst varchar(255),
+    Qty int
+);
+
+CREATE TABLE Customers (
+    CustomerID int,
+    LastName varchar(255),
+    FirstName varchar(255),
+    Address varchar(255),
+    City varchar(255)
+);
+
+CREATE TABLE Product (
+    Product varchar(255),
+    Price float,
+    Barcode int
+);
+
+CREATE TABLE Category (
+    Product varchar(255) FOREIGN KEY references Product,
+    Category varchar(255)
+);
