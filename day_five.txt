@@ -1,0 +1,88 @@
+def test_whiteboard():
+    pass
+
+PK: (Room, Time)
+Reservations Table
+Room        Time        Duration        User   ->   Dept.            Description    Account
+FK          DATE        (delta)DATE     FK          (remove column)  nchar(150)
+
+
+Users Table
+UserID      Dept.       Account #
+
+
+A functionally determines B,
+sameA --> sameB
+diffB --> diffA
+
+S(A, B -> C)
+T(A, B), R(B, C)
+
+S = T join R on 
+T.B = R.B
+
+SELECT FROM authorization
+account
+    WHERE userID = "..."
+
+
+Database Hygiene
+-No information in row order
+-Columns contain a single type
+-No duplicate rows
+-No information in row order
+-Column contain a single value
+
+Address     Name            Phone
+5341A       Mary            #
+5341A       Bob             #
+5341B       Andrew          #
+5341B       Josh            #
+5431C       Lilly           #
+
+
+t1      col1        col2     |  t2      col3        col4
+        A           1        |          A           foo
+        B           4        |          B           bar
+        C           2        |          D           baz
+        D           3        |          E           foo
+
+select count(#) from t1;
+
+select count(#) from t1 join  t2; -> 16
+
+select const(#) from t1 join t2 on col1 = col3; -> 3
+
+select col1, count() from t1 Group by col1; -> 4
+
+select col3, count() from t2 Group by col3; -> 4
+
+select * from t1 join t2 on col1 = col3
+
+t1c1    t1c2    t2c3    t2c4
+A       1       A       foo
+B       4       B       bar
+D       3       D       baz
+
+
+select * from t1 outer join t2 on t1.col 1 = t2.col3
+A   1   A   foo
+A   1   A   foo2
+B   4   B   bar
+C   2   -   -
+D   3   -   -
+D   3   D   baz
+-   -   E   foo
+
+
+Commands
+git cone <url>
+git add stuff
+git commit -m"comment"
+git remote add partner <URL>
+git checkout -b partner
+git branch
+git pull partner
+git pull hw1
+git checkout hw1
+git merge partner
