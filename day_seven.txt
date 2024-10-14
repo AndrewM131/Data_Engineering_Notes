@@ -1,0 +1,41 @@
+10/14/2024
+
+giant _data = pd.readdata()
+
+def function(x, y):
+    stuff use giant_data
+    return (w, v)
+
+class Something_Useful(self):
+    def __init__(self, arg1, arg2):
+        self.arg1 = arg1
+        ...
+    
+    def do_it(self):
+        ...
+
+su = SomethingUseful("arg")
+su.do_it()
+
+HTTP GET ~ Static content
+HTTP POST ~ file upload, changes
+HTTP DELETE ~ to delete data/files
+
+protocol://domain/endpoint?data_1=content&data_2=more_content
+
+Step 1: DNS look-up
+Step 2: request
+Step 3: reply
+
+RESTful API
+
+
+Service Oriented Architecture
+
+PROS:
+Maybe more secure?
+Have to design Auth
+Compartmentalization
+
+CONS:
+Performance
