@@ -1,0 +1,60 @@
+10/21/2024
+
+Bad Data
+
+Constraints prevent bad data go in
+
+
+primary key is important for example
+isbn = models.CharField....
+
+
+sqlite3 db.sqlite3
+.header on
+.tables
+<Shows tables>
+select * from library_book;
+
+
+
+
+In python3:
+how do we do joins:
+for inv_record in Inventory.objects.all():
+    print(inv_record.book.title)
+<prints titles>
+
+for book in Book.objetcs.filter(isbn='1234'):
+    print('here', book.title, book.isbn)
+
+
+Books.objects.filter(isbn='1234')
+<QuerySet [<Book: Book object (1234)>]
+
+Books.objects.filter(isbn='1234')[0]
+<Book: Book object (1234)>
+
+Books.objects.filter(isbn='1234')[0].author
+'DATA13600'
+
+Books.objects.filter(isbn='1234').values()
+<QuerySet [{'isbn': '1234', 'title':'How to use ORM', 'author':'DATA13600', 'year': 2024}]>
+
+list(Books.objects.filter(isbn='1234'))
+[<Book: Book object (1234)>]
+
+list(Books.objects.filter(isbn='1234').values())
+[{'isbn': '1234',
+'title':'How to use ORM',
+'author':'DATA13600',
+'year': 2024}]
+
+
+Example in cmsc13600-course-project/examples/ormintro/library/models.py
+
+
+Serliaztion in exam....
+
+The process of turning the memory into a stream of bytes
+
+Error messages lower time before we continue the program

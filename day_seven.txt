@@ -36,6 +36,13 @@ PROS:
 Maybe more secure?
 Have to design Auth
 Compartmentalization
+Easier to maintain/fix bugs
+
 
 CONS:
 Performance
+Hard to do
+
+
+from django.http import HTTP
+

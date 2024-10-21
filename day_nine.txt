@@ -1,0 +1,36 @@
+Midterm:
+
+To know:
+Predict behavior of cut, grep, cat, sort, uniq w/ popes, redirection
+Prediction of behavior of SQL queries
+Properties of functional dependence, refactoring
+Difference DDL, DML, scope of each, 1st normal form
+Foreign key constraints, properties of primary keys
+Tradeoffs for using DMBS, ORM systems, service oriented architecture
+Maybe questoins on debugging
+Facts, puzzles about serialization, models.py DDL
+
+What don't you need:
+Remember syntax
+2x2 decision accuracy tables / accuracy statistcis
+git syntax
+
+
+SQL:
+join, select, maybe group by's (based on practice exam)
+
+Info on Ed
+
+---------------------------------------------------
+
+Shells
+Python Shell
+sqlite3
+
+
+file API - what to do?
+Read whole thing
+Read part
+Write from start
+Write over part of file
+Append to file

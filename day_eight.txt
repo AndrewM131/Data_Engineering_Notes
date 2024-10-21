@@ -1,0 +1,34 @@
+10/16/2024
+
+Midterm:
+Multiple-Choice
+20-30 Questions
+Not going to take full class
+No need to memorize syntax
+Maybe practice exame
+Midterm Wednesday Next Week
+
+Object-Relational Model (ORM)
+
+Chat    Webserver       DBMS
+
+Create table Book
+    (isbn int PRIMARYKEY,
+    title charvar(256)
+    author ()
+    year)
+
+from library.models....
+
+new_book = Book(isbn='1234', ....)
+
+new_book.save()
+
+for book in Book.objects.all():
+    print(book.title, book.year, book.author)
+
+type(book.obkects.all())
+OUT:django.db.models.query.QuerySet
+
+Book.objects.all()
+
