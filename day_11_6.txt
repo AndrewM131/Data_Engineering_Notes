@@ -1,0 +1,57 @@
+Data Engineering Notes
+
+Data - Different Models or Transformations
+
+Compression
+-----------
+All compression techniques create a model of what the data looks like, encode
+the data in the model, and hope that the difference between the original and
+reconstructed version is small enough to be unimportant.
+
+Lossless Compression
+--------------------
+- Definition: This type of compression allows the original data to be perfectly reconstructed from the compressed data.
+- Characteristics:
+    - No data is lost during the compression process.
+    - The decompressed data is identical to the original data.
+- Examples:
+    - ZIP: A common file format that supports lossless data compression.
+    - PNG: A raster-graphics file format that supports lossless data compression.
+    - FLAC: A lossless audio coding format for digital audio.
+- Use Cases:
+    - Text files, where any loss of data is unacceptable.
+    - Medical imaging, where accuracy is critical.
+
+Lossy Compression
+-----------------
+- Definition: This type of compression allows for some loss of data, which means the original data cannot be perfectly reconstructed from the compressed data.
+- Characteristics:
+    - Some data is lost during the compression process.
+    - The decompressed data is not identical to the original data but is close enough for practical purposes.
+- Examples:
+    - JPEG: A commonly used method of lossy compression for digital images.
+    - MP3: A coding format for digital audio that uses lossy compression.
+    - MPEG: A standard for lossy compression of video and audio.
+- Use Cases:
+    - Multimedia files, where a perfect reconstruction is not necessary and some loss of quality is acceptable.
+    - Streaming services, where bandwidth efficiency is important.
+
+Conventions of Database Systems
+-------------------------------
+- Consistency: Ensures that a database remains in a consistent state, providing one correct answer to any query.
+- Availability: Ensures that the database is available for queries and transactions when the client needs it, providing quick responses.
+- Partition Tolerance: Ensures that the database system continues to operate despite network partitions, handling latency in the network.
+
+
+Online Transaction Procession (OLTP)
+Need Consistency
+Usually at the cost of Availability
+transaction simple, fast
+
+Online Analysis Procession (OLAP)
+Consistency not essential
+transaction more complex, slow
+
+Seperate high value data from low value data
+-Seperate code from configuration
+-configuration includes API keys
